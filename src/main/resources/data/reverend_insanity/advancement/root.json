@@ -1,0 +1,23 @@
+{
+  "display": {
+    "icon": {
+      "id": "reverend_insanity:hope_gu"
+    },
+    "title": {
+      "translate": "advancement.reverend_insanity.root.title",
+      "fallback": "\u86ca\u771f\u4eba\u4e4b\u8def"
+    },
+    "description": {
+      "translate": "advancement.reverend_insanity.root.description",
+      "fallback": "\u8e0f\u5165\u86ca\u4fee\u7684\u4e16\u754c..."
+    },
+    "background": "minecraft:textures/gui/advancements/backgrounds/stone.png",
+    "announce_to_chat": true,
+    "show_toast": false
+  },
+  "criteria": {
+    "requirement": {
+      "trigger": "minecraft:impossible"
+    }
+  }
+}

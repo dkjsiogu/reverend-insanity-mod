@@ -1,0 +1,14 @@
+{
+  "structures": [
+    {
+      "structure": "reverend_insanity:blood_lake_tomb",
+      "weight": 1
+    }
+  ],
+  "placement": {
+    "type": "minecraft:random_spread",
+    "spacing": 68,
+    "separation": 26,
+    "salt": 847291563
+  }
+}

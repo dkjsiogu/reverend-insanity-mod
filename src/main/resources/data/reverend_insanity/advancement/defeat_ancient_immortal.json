@@ -1,0 +1,10 @@
+{
+  "display": {
+    "icon": { "id": "reverend_insanity:breakthrough_stone" },
+    "title": { "translate": "advancement.reverend_insanity.defeat_ancient_immortal.title", "fallback": "\u4ed9\u6b92" },
+    "description": { "translate": "advancement.reverend_insanity.defeat_ancient_immortal.description", "fallback": "\u51fb\u8d25\u8fdc\u53e4\u86ca\u4ed9\u6b8b\u9b42" },
+    "frame": "challenge"
+  },
+  "parent": "reverend_insanity:root",
+  "criteria": { "requirement": { "trigger": "minecraft:impossible" } }
+}

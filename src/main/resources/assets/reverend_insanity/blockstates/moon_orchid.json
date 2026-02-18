@@ -1,0 +1,10 @@
+{
+  "variants": {
+    "age=0": { "model": "reverend_insanity:block/moon_orchid_stage0" },
+    "age=1": { "model": "reverend_insanity:block/moon_orchid_stage1" },
+    "age=2": { "model": "reverend_insanity:block/moon_orchid_stage2" },
+    "age=3": { "model": "reverend_insanity:block/moon_orchid_stage3" },
+    "age=4": { "model": "reverend_insanity:block/moon_orchid_stage4" },
+    "age=5": { "model": "reverend_insanity:block/moon_orchid_stage5" }
+  }
+}

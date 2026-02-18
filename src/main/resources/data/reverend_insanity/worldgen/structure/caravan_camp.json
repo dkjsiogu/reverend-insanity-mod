@@ -1,0 +1,6 @@
+{
+  "type": "reverend_insanity:caravan_camp",
+  "biomes": "#reverend_insanity:has_structure/caravan_camp",
+  "spawn_overrides": {},
+  "step": "surface_structures"
+}

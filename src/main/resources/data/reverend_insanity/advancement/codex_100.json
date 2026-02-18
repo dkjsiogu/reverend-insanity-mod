@@ -1,0 +1,22 @@
+{
+  "display": {
+    "icon": {
+      "id": "reverend_insanity:moonlight_gu"
+    },
+    "title": {
+      "translate": "advancement.reverend_insanity.codex_100.title",
+      "fallback": "\u86ca\u866b\u5927\u5bb6"
+    },
+    "description": {
+      "translate": "advancement.reverend_insanity.codex_100.description",
+      "fallback": "\u56fe\u9274\u4e2d\u6536\u5f55100\u79cd\u86ca\u866b"
+    },
+    "frame": "challenge"
+  },
+  "parent": "reverend_insanity:codex_50",
+  "criteria": {
+    "requirement": {
+      "trigger": "minecraft:impossible"
+    }
+  }
+}

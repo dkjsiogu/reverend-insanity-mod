@@ -1,0 +1,7 @@
+{
+  "parent": "minecraft:block/cross",
+  "textures": {
+    "cross": "reverend_insanity:block/moon_orchid_stage2"
+  },
+  "render_type": "minecraft:cutout"
+}

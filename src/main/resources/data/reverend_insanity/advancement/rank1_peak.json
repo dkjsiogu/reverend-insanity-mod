@@ -1,0 +1,22 @@
+{
+  "display": {
+    "icon": {
+      "id": "reverend_insanity:bear_strength_gu"
+    },
+    "title": {
+      "translate": "advancement.reverend_insanity.rank1_peak.title",
+      "fallback": "\u4e00\u8f6c\u5dc5\u5cf0"
+    },
+    "description": {
+      "translate": "advancement.reverend_insanity.rank1_peak.description",
+      "fallback": "\u4fee\u4e3a\u8fbe\u5230\u4e00\u8f6c\u5dc5\u5cf0"
+    },
+    "frame": "goal"
+  },
+  "parent": "reverend_insanity:first_gu",
+  "criteria": {
+    "requirement": {
+      "trigger": "minecraft:impossible"
+    }
+  }
+}

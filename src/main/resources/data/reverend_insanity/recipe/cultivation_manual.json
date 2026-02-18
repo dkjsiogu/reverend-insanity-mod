@@ -1,0 +1,11 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "ingredients": [
+    { "item": "minecraft:book" },
+    { "item": "reverend_insanity:lore_scroll" }
+  ],
+  "result": {
+    "id": "reverend_insanity:cultivation_manual",
+    "count": 1
+  }
+}

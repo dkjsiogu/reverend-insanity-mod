@@ -1,0 +1,22 @@
+{
+  "display": {
+    "icon": {
+      "id": "reverend_insanity:silver_moon_gu"
+    },
+    "title": {
+      "translate": "advancement.reverend_insanity.deduction_success.title",
+      "fallback": "\u63a8\u6f14\u6210\u529f"
+    },
+    "description": {
+      "translate": "advancement.reverend_insanity.deduction_success.description",
+      "fallback": "\u6210\u529f\u63a8\u6f14\u51fa\u4e00\u62db\u81ea\u521b\u6740\u62db"
+    },
+    "frame": "goal"
+  },
+  "parent": "reverend_insanity:first_killer_move",
+  "criteria": {
+    "requirement": {
+      "trigger": "minecraft:impossible"
+    }
+  }
+}

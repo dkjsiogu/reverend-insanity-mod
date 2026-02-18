@@ -1,0 +1,22 @@
+{
+  "display": {
+    "icon": {
+      "id": "reverend_insanity:blessed_land_core"
+    },
+    "title": {
+      "translate": "advancement.reverend_insanity.form_immortal_aperture.title",
+      "fallback": "\u4ed9\u7a8d\u5f00\u8f9f"
+    },
+    "description": {
+      "translate": "advancement.reverend_insanity.form_immortal_aperture.description",
+      "fallback": "\u5f00\u8f9f\u4ed9\u7a8d\uff0c\u8e0f\u5165\u4ed9\u9053"
+    },
+    "frame": "challenge"
+  },
+  "parent": "reverend_insanity:rank5",
+  "criteria": {
+    "requirement": {
+      "trigger": "minecraft:impossible"
+    }
+  }
+}

@@ -1,0 +1,22 @@
+{
+  "display": {
+    "icon": {
+      "id": "reverend_insanity:gu_master_spawn_egg"
+    },
+    "title": {
+      "translate": "advancement.reverend_insanity.defeat_gu_master.title",
+      "fallback": "\u6bd4\u8bd5\u80dc\u51fa"
+    },
+    "description": {
+      "translate": "advancement.reverend_insanity.defeat_gu_master.description",
+      "fallback": "\u51fb\u8d25\u4e00\u4f4d\u86ca\u5e08"
+    },
+    "frame": "task"
+  },
+  "parent": "reverend_insanity:first_killer_move",
+  "criteria": {
+    "requirement": {
+      "trigger": "minecraft:impossible"
+    }
+  }
+}

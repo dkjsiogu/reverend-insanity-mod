@@ -1,0 +1,14 @@
+{
+  "structures": [
+    {
+      "structure": "reverend_insanity:gu_academy",
+      "weight": 1
+    }
+  ],
+  "placement": {
+    "type": "minecraft:random_spread",
+    "spacing": 60,
+    "separation": 22,
+    "salt": 519384762
+  }
+}

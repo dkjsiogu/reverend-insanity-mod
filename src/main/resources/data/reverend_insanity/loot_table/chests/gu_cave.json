@@ -1,0 +1,248 @@
+{
+  "type": "minecraft:chest",
+  "pools": [
+    {
+      "rolls": {
+        "type": "minecraft:uniform",
+        "min": 2,
+        "max": 4
+      },
+      "entries": [
+        {
+          "type": "minecraft:item",
+          "name": "reverend_insanity:primeval_stone",
+          "weight": 20,
+          "functions": [
+            {
+              "function": "minecraft:set_count",
+              "count": {
+                "type": "minecraft:uniform",
+                "min": 1,
+                "max": 3
+              }
+            }
+          ]
+        },
+        {
+          "type": "minecraft:item",
+          "name": "reverend_insanity:moon_orchid_petal",
+          "weight": 15,
+          "functions": [
+            {
+              "function": "minecraft:set_count",
+              "count": {
+                "type": "minecraft:uniform",
+                "min": 1,
+                "max": 4
+              }
+            }
+          ]
+        },
+        {
+          "type": "minecraft:item",
+          "name": "reverend_insanity:breakthrough_stone",
+          "weight": 5
+        },
+        {
+          "type": "minecraft:item",
+          "name": "minecraft:iron_ingot",
+          "weight": 12,
+          "functions": [
+            {
+              "function": "minecraft:set_count",
+              "count": {
+                "type": "minecraft:uniform",
+                "min": 2,
+                "max": 5
+              }
+            }
+          ]
+        },
+        {
+          "type": "minecraft:item",
+          "name": "minecraft:gold_ingot",
+          "weight": 8,
+          "functions": [
+            {
+              "function": "minecraft:set_count",
+              "count": {
+                "type": "minecraft:uniform",
+                "min": 1,
+                "max": 3
+              }
+            }
+          ]
+        },
+        {
+          "type": "minecraft:item",
+          "name": "minecraft:diamond",
+          "weight": 3
+        },
+        {
+          "type": "minecraft:item",
+          "name": "minecraft:echo_shard",
+          "weight": 4,
+          "functions": [
+            {
+              "function": "minecraft:set_count",
+              "count": {
+                "type": "minecraft:uniform",
+                "min": 1,
+                "max": 2
+              }
+            }
+          ]
+        },
+        {
+          "type": "minecraft:item",
+          "name": "minecraft:amethyst_shard",
+          "weight": 10,
+          "functions": [
+            {
+              "function": "minecraft:set_count",
+              "count": {
+                "type": "minecraft:uniform",
+                "min": 2,
+                "max": 6
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "rolls": {
+        "type": "minecraft:uniform",
+        "min": 1,
+        "max": 2
+      },
+      "entries": [
+        {
+          "type": "minecraft:item",
+          "name": "reverend_insanity:moonlight_gu",
+          "weight": 10
+        },
+        {
+          "type": "minecraft:item",
+          "name": "reverend_insanity:liquor_worm",
+          "weight": 10
+        },
+        {
+          "type": "minecraft:item",
+          "name": "reverend_insanity:bear_strength_gu",
+          "weight": 8
+        },
+        {
+          "type": "minecraft:item",
+          "name": "reverend_insanity:jade_skin_gu",
+          "weight": 8
+        },
+        {
+          "type": "minecraft:item",
+          "name": "reverend_insanity:blood_gu",
+          "weight": 8
+        },
+        {
+          "type": "minecraft:item",
+          "name": "reverend_insanity:cold_ice_gu",
+          "weight": 6
+        },
+        {
+          "type": "minecraft:item",
+          "name": "reverend_insanity:fire_seed_gu",
+          "weight": 6
+        },
+        {
+          "type": "minecraft:item",
+          "name": "reverend_insanity:lightning_gu",
+          "weight": 6
+        },
+        {
+          "type": "minecraft:item",
+          "name": "reverend_insanity:flying_sword_gu",
+          "weight": 5
+        },
+        {
+          "type": "minecraft:item",
+          "name": "reverend_insanity:soul_search_gu",
+          "weight": 5
+        },
+        {
+          "type": "minecraft:item",
+          "name": "reverend_insanity:kill_intent_gu",
+          "weight": 4
+        },
+        {
+          "type": "minecraft:item",
+          "name": "reverend_insanity:warp_gu",
+          "weight": 3
+        },
+        {
+          "type": "minecraft:item",
+          "name": "reverend_insanity:charm_gu",
+          "weight": 4
+        },
+        {
+          "type": "minecraft:item",
+          "name": "reverend_insanity:dream_gu",
+          "weight": 4
+        }
+      ]
+    },
+    {
+      "rolls": 1,
+      "bonus_rolls": 0,
+      "entries": [
+        {
+          "type": "minecraft:item",
+          "name": "reverend_insanity:moonscar_gu",
+          "weight": 5
+        },
+        {
+          "type": "minecraft:item",
+          "name": "reverend_insanity:iron_bone_gu",
+          "weight": 5
+        },
+        {
+          "type": "minecraft:item",
+          "name": "reverend_insanity:blood_wing_gu",
+          "weight": 4
+        },
+        {
+          "type": "minecraft:item",
+          "name": "reverend_insanity:giant_strength_gu",
+          "weight": 4
+        },
+        {
+          "type": "minecraft:item",
+          "name": "reverend_insanity:blazing_flame_gu",
+          "weight": 3
+        },
+        {
+          "type": "minecraft:item",
+          "name": "reverend_insanity:myriad_sword_gu",
+          "weight": 3
+        },
+        {
+          "type": "minecraft:item",
+          "name": "reverend_insanity:star_fall_gu",
+          "weight": 2
+        },
+        {
+          "type": "minecraft:item",
+          "name": "reverend_insanity:death_strike_gu",
+          "weight": 2
+        },
+        {
+          "type": "minecraft:item",
+          "name": "reverend_insanity:time_reversal_gu",
+          "weight": 1
+        },
+        {
+          "type": "minecraft:empty",
+          "weight": 40
+        }
+      ]
+    }
+  ]
+}

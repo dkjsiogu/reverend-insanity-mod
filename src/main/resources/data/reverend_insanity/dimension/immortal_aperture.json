@@ -1,0 +1,10 @@
+{
+  "type": "reverend_insanity:immortal_aperture",
+  "generator": {
+    "type": "reverend_insanity:aperture_generator",
+    "biome_source": {
+      "type": "minecraft:fixed",
+      "biome": "minecraft:plains"
+    }
+  }
+}

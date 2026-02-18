@@ -1,0 +1,22 @@
+{
+  "display": {
+    "icon": {
+      "id": "reverend_insanity:heavens_eye_gu"
+    },
+    "title": {
+      "translate": "advancement.reverend_insanity.rank3.title",
+      "fallback": "\u4e09\u8f6c\u86ca\u5e08"
+    },
+    "description": {
+      "translate": "advancement.reverend_insanity.rank3.description",
+      "fallback": "\u7a81\u7834\u81f3\u4e09\u8f6c\uff0c\u5df2\u662f\u4e00\u65b9\u5f3a\u8005"
+    },
+    "frame": "challenge"
+  },
+  "parent": "reverend_insanity:rank2",
+  "criteria": {
+    "requirement": {
+      "trigger": "minecraft:impossible"
+    }
+  }
+}

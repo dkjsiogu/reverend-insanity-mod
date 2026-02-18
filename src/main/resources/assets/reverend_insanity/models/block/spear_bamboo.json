@@ -1,0 +1,7 @@
+{
+  "parent": "minecraft:block/cross",
+  "textures": {
+    "cross": "reverend_insanity:block/spear_bamboo"
+  },
+  "render_type": "minecraft:cutout"
+}

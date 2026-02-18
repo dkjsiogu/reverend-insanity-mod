@@ -1,0 +1,7 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "ingredients": [
+    {"item": "reverend_insanity:spider_silk"}
+  ],
+  "result": {"id": "minecraft:string", "count": 3}
+}

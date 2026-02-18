@@ -1,0 +1,6 @@
+{
+  "type": "reverend_insanity:moon_orchid_cave",
+  "biomes": "#reverend_insanity:has_structure/moon_orchid_cave",
+  "spawn_overrides": {},
+  "step": "underground_structures"
+}

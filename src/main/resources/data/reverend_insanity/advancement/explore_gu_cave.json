@@ -1,0 +1,22 @@
+{
+  "display": {
+    "icon": {
+      "id": "minecraft:deepslate_bricks"
+    },
+    "title": {
+      "translate": "advancement.reverend_insanity.explore_gu_cave.title",
+      "fallback": "\u86ca\u7a9f\u63a2\u9669"
+    },
+    "description": {
+      "translate": "advancement.reverend_insanity.explore_gu_cave.description",
+      "fallback": "\u53d1\u73b0\u5e76\u8fdb\u5165\u4e00\u5904\u86ca\u7a9f"
+    },
+    "frame": "task"
+  },
+  "parent": "reverend_insanity:open_aperture",
+  "criteria": {
+    "requirement": {
+      "trigger": "minecraft:impossible"
+    }
+  }
+}

@@ -1,0 +1,22 @@
+{
+  "display": {
+    "icon": {
+      "id": "reverend_insanity:liquor_worm"
+    },
+    "title": {
+      "translate": "advancement.reverend_insanity.explore_wine_tomb.title",
+      "fallback": "\u82b1\u9152\u884c\u8005\u9057\u85cf"
+    },
+    "description": {
+      "translate": "advancement.reverend_insanity.explore_wine_tomb.description",
+      "fallback": "\u53d1\u73b0\u4e94\u8f6c\u9b54\u9053\u86ca\u5e08\u82b1\u9152\u884c\u8005\u7684\u5730\u4e0b\u5893\u5ba4"
+    },
+    "frame": "challenge"
+  },
+  "parent": "reverend_insanity:root",
+  "criteria": {
+    "requirement": {
+      "trigger": "minecraft:impossible"
+    }
+  }
+}

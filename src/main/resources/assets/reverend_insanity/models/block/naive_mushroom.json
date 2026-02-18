@@ -1,0 +1,6 @@
+{
+  "parent": "minecraft:block/cross",
+  "textures": {
+    "cross": "reverend_insanity:block/naive_mushroom"
+  }
+}

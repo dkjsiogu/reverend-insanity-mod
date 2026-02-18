@@ -1,0 +1,58 @@
+{
+  "type": "minecraft:block",
+  "pools": [
+    {
+      "rolls": 1,
+      "entries": [
+        {
+          "type": "minecraft:alternatives",
+          "children": [
+            {
+              "type": "minecraft:item",
+              "name": "reverend_insanity:moon_orchid_petal",
+              "conditions": [
+                {
+                  "condition": "minecraft:block_state_property",
+                  "block": "reverend_insanity:moon_orchid",
+                  "properties": { "age": "5" }
+                }
+              ],
+              "functions": [
+                {
+                  "function": "minecraft:set_count",
+                  "count": { "type": "minecraft:uniform", "min": 1, "max": 3 }
+                }
+              ]
+            },
+            {
+              "type": "minecraft:item",
+              "name": "reverend_insanity:moon_orchid_seeds"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "rolls": 1,
+      "conditions": [
+        {
+          "condition": "minecraft:block_state_property",
+          "block": "reverend_insanity:moon_orchid",
+          "properties": { "age": "5" }
+        }
+      ],
+      "entries": [
+        {
+          "type": "minecraft:item",
+          "name": "reverend_insanity:moon_orchid_seeds",
+          "functions": [
+            {
+              "function": "minecraft:set_count",
+              "count": { "type": "minecraft:uniform", "min": 0, "max": 2 }
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

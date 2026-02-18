@@ -1,0 +1,28 @@
+# Build output
+build/
+bin/
+out/
+
+# Gradle
+.gradle/
+
+# IDE
+.eclipse/
+.idea/
+*.iml
+*.ipr
+*.iws
+
+# Runtime
+runs/
+
+# Tool configs
+.serena/
+
+# Novel source text (copyrighted, too large)
+蛊真人.txt
+蛊真人_utf8.txt
+
+# OS
+.DS_Store
+Thumbs.db

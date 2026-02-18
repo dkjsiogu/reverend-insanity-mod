@@ -1,0 +1,22 @@
+{
+  "display": {
+    "icon": {
+      "id": "reverend_insanity:spring_autumn_cicada"
+    },
+    "title": {
+      "translate": "advancement.reverend_insanity.collect_10_gu.title",
+      "fallback": "\u86ca\u866b\u6536\u85cf\u5bb6"
+    },
+    "description": {
+      "translate": "advancement.reverend_insanity.collect_10_gu.description",
+      "fallback": "\u7a7a\u7a8d\u4e2d\u540c\u65f6\u5b58\u6709\u5341\u53ea\u86ca\u866b"
+    },
+    "frame": "challenge"
+  },
+  "parent": "reverend_insanity:first_gu",
+  "criteria": {
+    "requirement": {
+      "trigger": "minecraft:impossible"
+    }
+  }
+}

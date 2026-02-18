@@ -1,0 +1,8 @@
+{
+  "type": "neoforge:add_features",
+  "biomes": "#minecraft:is_overworld",
+  "features": [
+    "reverend_insanity:wild_moon_orchid"
+  ],
+  "step": "vegetal_decoration"
+}

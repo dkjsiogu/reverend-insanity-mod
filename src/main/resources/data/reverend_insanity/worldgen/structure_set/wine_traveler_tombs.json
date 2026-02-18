@@ -1,0 +1,14 @@
+{
+  "structures": [
+    {
+      "structure": "reverend_insanity:wine_traveler_tomb",
+      "weight": 1
+    }
+  ],
+  "placement": {
+    "type": "minecraft:random_spread",
+    "spacing": 72,
+    "separation": 28,
+    "salt": 638471925
+  }
+}

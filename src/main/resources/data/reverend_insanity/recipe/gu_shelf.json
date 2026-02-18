@@ -1,0 +1,6 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": ["PPP", "P P", "PPP"],
+  "key": {"P": {"item": "minecraft:oak_planks"}},
+  "result": {"id": "reverend_insanity:gu_shelf", "count": 1}
+}

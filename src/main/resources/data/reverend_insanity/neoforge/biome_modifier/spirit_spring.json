@@ -1,0 +1,8 @@
+{
+  "type": "neoforge:add_features",
+  "biomes": "#minecraft:is_overworld",
+  "features": [
+    "reverend_insanity:spirit_spring"
+  ],
+  "step": "underground_ores"
+}

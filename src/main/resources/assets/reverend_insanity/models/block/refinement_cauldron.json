@@ -1,0 +1,8 @@
+{
+  "parent": "minecraft:block/cube_bottom_top",
+  "textures": {
+    "top": "reverend_insanity:block/refinement_cauldron_top",
+    "bottom": "reverend_insanity:block/refinement_cauldron_top",
+    "side": "reverend_insanity:block/refinement_cauldron_side"
+  }
+}

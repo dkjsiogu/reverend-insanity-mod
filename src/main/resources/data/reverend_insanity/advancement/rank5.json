@@ -1,0 +1,22 @@
+{
+  "display": {
+    "icon": {
+      "id": "reverend_insanity:breakthrough_stone"
+    },
+    "title": {
+      "translate": "advancement.reverend_insanity.rank5.title",
+      "fallback": "\u4e94\u8f6c\u86ca\u5e08"
+    },
+    "description": {
+      "translate": "advancement.reverend_insanity.rank5.description",
+      "fallback": "\u6e21\u8fc7\u5927\u5929\u52ab\uff0c\u665a\u8f6c\u5de8\u5934\uff0c\u5929\u4e0b\u5c11\u6709\u654c\u624b"
+    },
+    "frame": "challenge"
+  },
+  "parent": "reverend_insanity:rank4",
+  "criteria": {
+    "requirement": {
+      "trigger": "minecraft:impossible"
+    }
+  }
+}

@@ -1,0 +1,9 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [" W ", "WSW", " S "],
+  "key": {
+    "W": {"item": "minecraft:wheat"},
+    "S": {"item": "minecraft:stick"}
+  },
+  "result": {"id": "reverend_insanity:straw_puppet_spawn_egg", "count": 1}
+}

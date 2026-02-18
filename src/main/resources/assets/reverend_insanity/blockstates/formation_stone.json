@@ -1,0 +1,6 @@
+{
+  "variants": {
+    "active=false": { "model": "reverend_insanity:block/formation_stone" },
+    "active=true": { "model": "reverend_insanity:block/formation_stone_active" }
+  }
+}

@@ -1,0 +1,36 @@
+{
+  "type": "minecraft:chest",
+  "pools": [
+    {
+      "rolls": { "min": 1, "max": 2, "type": "minecraft:uniform" },
+      "entries": [
+        { "type": "minecraft:item", "name": "reverend_insanity:hope_gu", "weight": 10 },
+        { "type": "minecraft:item", "name": "reverend_insanity:moonlight_gu", "weight": 20 },
+        { "type": "minecraft:item", "name": "reverend_insanity:wine_gu", "weight": 20 },
+        { "type": "minecraft:item", "name": "reverend_insanity:jade_skin_gu", "weight": 15 }
+      ]
+    },
+    {
+      "rolls": 1,
+      "entries": [
+        { "type": "minecraft:item", "name": "reverend_insanity:lore_scroll", "weight": 60 },
+        { "type": "minecraft:empty", "weight": 40 }
+      ]
+    },
+    {
+      "rolls": 1,
+      "entries": [
+        {
+          "type": "minecraft:item",
+          "name": "reverend_insanity:primeval_stone",
+          "functions": [
+            {
+              "function": "minecraft:set_count",
+              "count": { "min": 2, "max": 4, "type": "minecraft:uniform" }
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

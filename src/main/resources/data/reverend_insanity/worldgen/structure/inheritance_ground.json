@@ -1,0 +1,6 @@
+{
+  "type": "reverend_insanity:inheritance_ground",
+  "biomes": "#reverend_insanity:has_structure/inheritance_ground",
+  "spawn_overrides": {},
+  "step": "underground_structures"
+}

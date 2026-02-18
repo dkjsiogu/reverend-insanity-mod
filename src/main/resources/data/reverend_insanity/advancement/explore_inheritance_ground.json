@@ -1,0 +1,22 @@
+{
+  "display": {
+    "icon": {
+      "id": "reverend_insanity:breakthrough_stone"
+    },
+    "title": {
+      "translate": "advancement.reverend_insanity.explore_inheritance_ground.title",
+      "fallback": "\u4f20\u627f\u79d8\u5883"
+    },
+    "description": {
+      "translate": "advancement.reverend_insanity.explore_inheritance_ground.description",
+      "fallback": "\u53d1\u73b0\u4e00\u5904\u53e4\u4ee3\u86ca\u5e08\u7559\u4e0b\u7684\u4f20\u627f\u79d8\u5883"
+    },
+    "frame": "challenge"
+  },
+  "parent": "reverend_insanity:root",
+  "criteria": {
+    "requirement": {
+      "trigger": "minecraft:impossible"
+    }
+  }
+}

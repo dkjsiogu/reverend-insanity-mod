@@ -1,0 +1,9 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [" G ", "GSG", " G "],
+  "key": {
+    "G": {"item": "minecraft:gold_ingot"},
+    "S": {"item": "minecraft:stone"}
+  },
+  "result": {"id": "reverend_insanity:formation_stone", "count": 1}
+}

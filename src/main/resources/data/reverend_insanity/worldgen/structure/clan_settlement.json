@@ -1,0 +1,6 @@
+{
+  "type": "reverend_insanity:clan_settlement",
+  "biomes": "#reverend_insanity:has_structure/clan_settlement",
+  "spawn_overrides": {},
+  "step": "surface_structures"
+}

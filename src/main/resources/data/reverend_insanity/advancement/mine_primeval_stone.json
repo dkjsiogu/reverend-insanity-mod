@@ -1,0 +1,29 @@
+{
+  "display": {
+    "icon": {
+      "id": "reverend_insanity:primeval_stone_ore"
+    },
+    "title": {
+      "translate": "advancement.reverend_insanity.mine_primeval_stone.title",
+      "fallback": "\u91c7\u77f3\u70bc\u5143"
+    },
+    "description": {
+      "translate": "advancement.reverend_insanity.mine_primeval_stone.description",
+      "fallback": "\u6316\u6398\u5143\u77f3\u77ff\u83b7\u53d6\u5143\u77f3"
+    },
+    "frame": "task"
+  },
+  "parent": "reverend_insanity:open_aperture",
+  "criteria": {
+    "has_primeval_stone": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "items": "reverend_insanity:primeval_stone"
+          }
+        ]
+      }
+    }
+  }
+}

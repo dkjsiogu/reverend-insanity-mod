@@ -1,0 +1,22 @@
+{
+  "display": {
+    "icon": {
+      "id": "reverend_insanity:primeval_stone"
+    },
+    "title": {
+      "translate": "advancement.reverend_insanity.feed_gu.title",
+      "fallback": "\u86ca\u866b\u5582\u517b"
+    },
+    "description": {
+      "translate": "advancement.reverend_insanity.feed_gu.description",
+      "fallback": "\u9996\u6b21\u5582\u517b\u86ca\u866b"
+    },
+    "frame": "task"
+  },
+  "parent": "reverend_insanity:first_gu",
+  "criteria": {
+    "requirement": {
+      "trigger": "minecraft:impossible"
+    }
+  }
+}

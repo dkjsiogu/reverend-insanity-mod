@@ -1,0 +1,22 @@
+{
+  "display": {
+    "icon": {
+      "id": "reverend_insanity:gold_light_worm"
+    },
+    "title": {
+      "translate": "advancement.reverend_insanity.rank2.title",
+      "fallback": "\u4e8c\u8f6c\u86ca\u5e08"
+    },
+    "description": {
+      "translate": "advancement.reverend_insanity.rank2.description",
+      "fallback": "\u7a81\u7834\u81f3\u4e8c\u8f6c\u5883\u754c"
+    },
+    "frame": "goal"
+  },
+  "parent": "reverend_insanity:rank1_peak",
+  "criteria": {
+    "requirement": {
+      "trigger": "minecraft:impossible"
+    }
+  }
+}

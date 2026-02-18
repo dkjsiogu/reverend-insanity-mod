@@ -1,0 +1,22 @@
+{
+  "display": {
+    "icon": {
+      "id": "reverend_insanity:refinement_cauldron"
+    },
+    "title": {
+      "translate": "advancement.reverend_insanity.refinement.title",
+      "fallback": "\u70bc\u86ca\u4e4b\u9053"
+    },
+    "description": {
+      "translate": "advancement.reverend_insanity.refinement.description",
+      "fallback": "\u4f7f\u7528\u70bc\u86ca\u7089\u70bc\u5236\u86ca\u866b"
+    },
+    "frame": "task"
+  },
+  "parent": "reverend_insanity:first_gu",
+  "criteria": {
+    "requirement": {
+      "trigger": "minecraft:impossible"
+    }
+  }
+}

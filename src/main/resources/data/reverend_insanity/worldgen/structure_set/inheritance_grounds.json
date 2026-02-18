@@ -1,0 +1,14 @@
+{
+  "structures": [
+    {
+      "structure": "reverend_insanity:inheritance_ground",
+      "weight": 1
+    }
+  ],
+  "placement": {
+    "type": "minecraft:random_spread",
+    "spacing": 80,
+    "separation": 30,
+    "salt": 471829536
+  }
+}

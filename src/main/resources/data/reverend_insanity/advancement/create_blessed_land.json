@@ -1,0 +1,22 @@
+{
+  "parent": "reverend_insanity:root",
+  "display": {
+    "icon": {
+      "id": "reverend_insanity:blessed_land_core"
+    },
+    "title": {
+      "translate": "advancement.reverend_insanity.create_blessed_land.title",
+      "fallback": "\u5f00\u8f9f\u798f\u5730"
+    },
+    "description": {
+      "translate": "advancement.reverend_insanity.create_blessed_land.description",
+      "fallback": "\u7b2c\u4e00\u6b21\u653e\u7f6e\u798f\u5730\u4e4b\u79cd"
+    },
+    "frame": "goal"
+  },
+  "criteria": {
+    "impossible": {
+      "trigger": "minecraft:impossible"
+    }
+  }
+}

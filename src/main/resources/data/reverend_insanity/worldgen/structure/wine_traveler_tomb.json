@@ -1,0 +1,6 @@
+{
+  "type": "reverend_insanity:wine_traveler_tomb",
+  "biomes": "#reverend_insanity:has_structure/wine_traveler_tomb",
+  "spawn_overrides": {},
+  "step": "underground_structures"
+}

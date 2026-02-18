@@ -1,0 +1,6 @@
+{
+  "type": "reverend_insanity:blood_lake_tomb",
+  "biomes": "#reverend_insanity:has_structure/blood_lake_tomb",
+  "spawn_overrides": {},
+  "step": "underground_structures"
+}

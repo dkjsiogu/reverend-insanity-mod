@@ -1,0 +1,157 @@
+{
+  "type": "minecraft:chest",
+  "pools": [
+    {
+      "rolls": {
+        "type": "minecraft:uniform",
+        "min": 2,
+        "max": 3
+      },
+      "entries": [
+        {
+          "type": "minecraft:item",
+          "name": "reverend_insanity:primeval_stone",
+          "weight": 20,
+          "functions": [
+            {
+              "function": "minecraft:set_count",
+              "count": {
+                "type": "minecraft:uniform",
+                "min": 8,
+                "max": 16
+              }
+            }
+          ]
+        },
+        {
+          "type": "minecraft:item",
+          "name": "reverend_insanity:breakthrough_stone",
+          "weight": 20
+        },
+        {
+          "type": "minecraft:item",
+          "name": "reverend_insanity:hope_gu",
+          "weight": 10
+        }
+      ]
+    },
+    {
+      "rolls": {
+        "type": "minecraft:uniform",
+        "min": 1,
+        "max": 2
+      },
+      "entries": [
+        {
+          "type": "minecraft:item",
+          "name": "reverend_insanity:blazing_flame_gu",
+          "weight": 5
+        },
+        {
+          "type": "minecraft:item",
+          "name": "reverend_insanity:myriad_sword_gu",
+          "weight": 5
+        },
+        {
+          "type": "minecraft:item",
+          "name": "reverend_insanity:star_fall_gu",
+          "weight": 4
+        },
+        {
+          "type": "minecraft:item",
+          "name": "reverend_insanity:death_strike_gu",
+          "weight": 4
+        },
+        {
+          "type": "minecraft:item",
+          "name": "reverend_insanity:ice_seal_gu",
+          "weight": 4
+        },
+        {
+          "type": "minecraft:item",
+          "name": "reverend_insanity:soul_crush_gu",
+          "weight": 4
+        },
+        {
+          "type": "minecraft:item",
+          "name": "reverend_insanity:time_reversal_gu",
+          "weight": 3
+        },
+        {
+          "type": "minecraft:item",
+          "name": "reverend_insanity:thunderstorm_gu",
+          "weight": 4
+        },
+        {
+          "type": "minecraft:item",
+          "name": "reverend_insanity:torrent_gu",
+          "weight": 4
+        },
+        {
+          "type": "minecraft:item",
+          "name": "reverend_insanity:abyss_devour_gu",
+          "weight": 3
+        },
+        {
+          "type": "minecraft:item",
+          "name": "reverend_insanity:grand_illusion_gu",
+          "weight": 3
+        },
+        {
+          "type": "minecraft:item",
+          "name": "reverend_insanity:petrify_gu",
+          "weight": 4
+        }
+      ]
+    },
+    {
+      "rolls": 1,
+      "entries": [
+        {
+          "type": "minecraft:item",
+          "name": "reverend_insanity:spring_autumn_cicada",
+          "weight": 15
+        },
+        {
+          "type": "minecraft:item",
+          "name": "reverend_insanity:heavens_eye_gu",
+          "weight": 5
+        },
+        {
+          "type": "minecraft:item",
+          "name": "reverend_insanity:displacement_gu",
+          "weight": 5
+        },
+        {
+          "type": "minecraft:item",
+          "name": "reverend_insanity:gold_silkworm_gu",
+          "weight": 4
+        },
+        {
+          "type": "minecraft:item",
+          "name": "reverend_insanity:flesh_bone_gu",
+          "weight": 4
+        },
+        {
+          "type": "minecraft:item",
+          "name": "reverend_insanity:heaven_blade_gu",
+          "weight": 3
+        },
+        {
+          "type": "minecraft:item",
+          "name": "reverend_insanity:void_annihilation_gu",
+          "weight": 2
+        },
+        {
+          "type": "minecraft:item",
+          "name": "reverend_insanity:heaven_punishment_gu",
+          "weight": 2
+        },
+        {
+          "type": "minecraft:empty",
+          "weight": 30
+        }
+      ]
+    }
+  ]
+}

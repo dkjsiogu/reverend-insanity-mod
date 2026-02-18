@@ -1,0 +1,22 @@
+{
+  "display": {
+    "icon": {
+      "id": "reverend_insanity:breakthrough_stone"
+    },
+    "title": {
+      "translate": "advancement.reverend_insanity.rank4.title",
+      "fallback": "\u56db\u8f6c\u86ca\u5e08"
+    },
+    "description": {
+      "translate": "advancement.reverend_insanity.rank4.description",
+      "fallback": "\u6e21\u52ab\u7a81\u7834\u81f3\u56db\u8f6c\uff0c\u5df2\u662f\u4e00\u65b9\u9738\u4e3b"
+    },
+    "frame": "challenge"
+  },
+  "parent": "reverend_insanity:survive_tribulation",
+  "criteria": {
+    "requirement": {
+      "trigger": "minecraft:impossible"
+    }
+  }
+}

@@ -1,0 +1,24 @@
+{
+  "display": {
+    "icon": {
+      "id": "reverend_insanity:spring_autumn_cicada"
+    },
+    "title": {
+      "translate": "advancement.reverend_insanity.spring_autumn_cicada_used.title",
+      "fallback": "\u9006\u8f6c\u65f6\u5149"
+    },
+    "description": {
+      "translate": "advancement.reverend_insanity.spring_autumn_cicada_used.description",
+      "fallback": "\u6625\u79cb\u8749\u53d1\u52a8\uff0c\u4ece\u6b7b\u4ea1\u4e2d\u91cd\u751f"
+    },
+    "frame": "challenge",
+    "show_toast": true,
+    "announce_to_chat": true
+  },
+  "parent": "reverend_insanity:root",
+  "criteria": {
+    "impossible": {
+      "trigger": "minecraft:impossible"
+    }
+  }
+}

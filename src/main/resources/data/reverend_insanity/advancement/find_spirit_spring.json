@@ -1,0 +1,22 @@
+{
+  "parent": "reverend_insanity:root",
+  "display": {
+    "icon": {
+      "id": "reverend_insanity:spirit_spring"
+    },
+    "title": {
+      "translate": "advancement.reverend_insanity.find_spirit_spring.title",
+      "fallback": "\u7075\u6cc9\u5b9d\u5730"
+    },
+    "description": {
+      "translate": "advancement.reverend_insanity.find_spirit_spring.description",
+      "fallback": "\u53d1\u73b0\u5929\u7136\u7075\u6cc9\uff0c\u7075\u6c14\u6c47\u805a\u4e4b\u5730"
+    },
+    "frame": "goal"
+  },
+  "criteria": {
+    "impossible": {
+      "trigger": "minecraft:impossible"
+    }
+  }
+}

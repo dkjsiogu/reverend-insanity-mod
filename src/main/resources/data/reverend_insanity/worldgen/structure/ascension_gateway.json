@@ -1,0 +1,6 @@
+{
+  "type": "reverend_insanity:ascension_gateway",
+  "biomes": "#reverend_insanity:has_structure/ascension_gateway",
+  "spawn_overrides": {},
+  "step": "surface_structures"
+}

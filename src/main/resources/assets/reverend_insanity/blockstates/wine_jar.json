@@ -1,0 +1,21 @@
+{
+  "variants": {
+    "uses=0": { "model": "reverend_insanity:block/wine_jar_empty" },
+    "uses=1": { "model": "reverend_insanity:block/wine_jar" },
+    "uses=2": { "model": "reverend_insanity:block/wine_jar" },
+    "uses=3": { "model": "reverend_insanity:block/wine_jar" },
+    "uses=4": { "model": "reverend_insanity:block/wine_jar" },
+    "uses=5": { "model": "reverend_insanity:block/wine_jar" },
+    "uses=6": { "model": "reverend_insanity:block/wine_jar" },
+    "uses=7": { "model": "reverend_insanity:block/wine_jar" },
+    "uses=8": { "model": "reverend_insanity:block/wine_jar" },
+    "uses=9": { "model": "reverend_insanity:block/wine_jar" },
+    "uses=10": { "model": "reverend_insanity:block/wine_jar" },
+    "uses=11": { "model": "reverend_insanity:block/wine_jar" },
+    "uses=12": { "model": "reverend_insanity:block/wine_jar" },
+    "uses=13": { "model": "reverend_insanity:block/wine_jar" },
+    "uses=14": { "model": "reverend_insanity:block/wine_jar" },
+    "uses=15": { "model": "reverend_insanity:block/wine_jar" },
+    "uses=16": { "model": "reverend_insanity:block/wine_jar" }
+  }
+}

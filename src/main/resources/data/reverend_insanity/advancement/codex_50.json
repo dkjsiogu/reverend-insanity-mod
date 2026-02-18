@@ -1,0 +1,22 @@
+{
+  "display": {
+    "icon": {
+      "id": "reverend_insanity:moonlight_gu"
+    },
+    "title": {
+      "translate": "advancement.reverend_insanity.codex_50.title",
+      "fallback": "\u86ca\u866b\u5b66\u8005"
+    },
+    "description": {
+      "translate": "advancement.reverend_insanity.codex_50.description",
+      "fallback": "\u56fe\u9274\u4e2d\u6536\u5f5550\u79cd\u86ca\u866b"
+    },
+    "frame": "goal"
+  },
+  "parent": "reverend_insanity:first_codex_discovery",
+  "criteria": {
+    "requirement": {
+      "trigger": "minecraft:impossible"
+    }
+  }
+}

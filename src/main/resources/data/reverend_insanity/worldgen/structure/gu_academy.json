@@ -1,0 +1,6 @@
+{
+  "type": "reverend_insanity:gu_academy",
+  "biomes": "#reverend_insanity:has_structure/gu_academy",
+  "spawn_overrides": {},
+  "step": "surface_structures"
+}

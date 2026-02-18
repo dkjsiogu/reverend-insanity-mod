@@ -1,0 +1,10 @@
+{
+  "display": {
+    "icon": { "id": "reverend_insanity:moon_orchid_seeds" },
+    "title": { "translate": "advancement.reverend_insanity.explore_moon_orchid_cave.title", "fallback": "\u6708\u5170\u82b1\u6d77" },
+    "description": { "translate": "advancement.reverend_insanity.explore_moon_orchid_cave.description", "fallback": "\u53d1\u73b0\u4f20\u8bf4\u4e2d\u7684\u5730\u4e0b\u6708\u5170\u82b1\u6d77\u6eb6\u6d1e" },
+    "frame": "challenge"
+  },
+  "parent": "reverend_insanity:root",
+  "criteria": { "requirement": { "trigger": "minecraft:impossible" } }
+}

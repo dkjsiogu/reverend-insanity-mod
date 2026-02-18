@@ -1,0 +1,22 @@
+{
+  "display": {
+    "icon": {
+      "id": "reverend_insanity:moonlight_gu"
+    },
+    "title": {
+      "translate": "advancement.reverend_insanity.first_gu.title",
+      "fallback": "\u70bc\u5316\u521d\u86ca"
+    },
+    "description": {
+      "translate": "advancement.reverend_insanity.first_gu.description",
+      "fallback": "\u6210\u529f\u70bc\u5316\u7b2c\u4e00\u53ea\u86ca\u866b"
+    },
+    "frame": "task"
+  },
+  "parent": "reverend_insanity:open_aperture",
+  "criteria": {
+    "requirement": {
+      "trigger": "minecraft:impossible"
+    }
+  }
+}

@@ -1,0 +1,8 @@
+{
+  "type": "neoforge:add_features",
+  "biomes": "#minecraft:is_overworld",
+  "features": [
+    "reverend_insanity:primeval_stone_ore"
+  ],
+  "step": "underground_ores"
+}

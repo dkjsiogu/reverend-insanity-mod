@@ -1,0 +1,6 @@
+{
+  "type": "reverend_insanity:heaven_fragment",
+  "biomes": "#reverend_insanity:has_structure/heaven_fragment",
+  "spawn_overrides": {},
+  "step": "surface_structures"
+}

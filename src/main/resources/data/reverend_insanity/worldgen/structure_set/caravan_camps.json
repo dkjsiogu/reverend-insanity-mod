@@ -1,0 +1,14 @@
+{
+  "structures": [
+    {
+      "structure": "reverend_insanity:caravan_camp",
+      "weight": 1
+    }
+  ],
+  "placement": {
+    "type": "minecraft:random_spread",
+    "spacing": 40,
+    "separation": 16,
+    "salt": 372615948
+  }
+}

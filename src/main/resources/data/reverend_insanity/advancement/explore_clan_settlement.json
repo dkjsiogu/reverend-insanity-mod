@@ -1,0 +1,10 @@
+{
+  "display": {
+    "icon": { "id": "reverend_insanity:lore_scroll" },
+    "title": { "translate": "advancement.reverend_insanity.explore_clan_settlement.title", "fallback": "\u53e4\u6708\u5c71\u5be8" },
+    "description": { "translate": "advancement.reverend_insanity.explore_clan_settlement.description", "fallback": "\u53d1\u73b0\u86ca\u5e08\u5bb6\u65cf\u7684\u53e4\u8001\u805a\u843d" },
+    "frame": "task"
+  },
+  "parent": "reverend_insanity:root",
+  "criteria": { "requirement": { "trigger": "minecraft:impossible" } }
+}

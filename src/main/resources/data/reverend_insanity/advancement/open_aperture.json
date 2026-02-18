@@ -1,0 +1,22 @@
+{
+  "display": {
+    "icon": {
+      "id": "reverend_insanity:primeval_stone"
+    },
+    "title": {
+      "translate": "advancement.reverend_insanity.open_aperture.title",
+      "fallback": "\u7a7a\u7a8d\u521d\u5f00"
+    },
+    "description": {
+      "translate": "advancement.reverend_insanity.open_aperture.description",
+      "fallback": "\u6210\u529f\u5f00\u542f\u7a7a\u7a8d\uff0c\u8e0f\u4e0a\u86ca\u4fee\u4e4b\u8def"
+    },
+    "frame": "task"
+  },
+  "parent": "reverend_insanity:root",
+  "criteria": {
+    "requirement": {
+      "trigger": "minecraft:impossible"
+    }
+  }
+}

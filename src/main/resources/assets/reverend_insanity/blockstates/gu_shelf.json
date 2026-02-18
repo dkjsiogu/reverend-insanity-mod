@@ -1,0 +1,8 @@
+{
+  "variants": {
+    "facing=north": { "model": "reverend_insanity:block/gu_shelf" },
+    "facing=south": { "model": "reverend_insanity:block/gu_shelf", "y": 180 },
+    "facing=west": { "model": "reverend_insanity:block/gu_shelf", "y": 270 },
+    "facing=east": { "model": "reverend_insanity:block/gu_shelf", "y": 90 }
+  }
+}
