@@ -151,6 +151,9 @@ GuMasterEntity不能是泛用Monster，必须是**有道路、有蛊虫、有杀
 - 草人傀儡实体（StrawPuppetEntity）
 - 山地蜘蛛实体（MountainSpiderEntity）
 - 远古蛊仙残魂实体（AncientGuImmortalEntity）
+- 尊者实体（VenerableEntity）
+- 无形之手实体（FormlessHandEntity）
+- 幻影仙人实体（PhantomImmortalEntity）
 - 陈酿酒
 - 兽骨
 - 血液瓶
@@ -195,7 +198,7 @@ GuMasterEntity不能是泛用Monster，必须是**有道路、有蛊虫、有杀
 - 灾劫抵抗修复（damageReduced正确递减）
 - 蛊虫图鉴快捷键（K键·完整注册+事件+翻译）
 - 成就系统扩展（30个成就：+图鉴发现/50/100·推演成功·仙窍开辟·蛊虫喂养·击败蛊师·蛊商交易）
-- **全48道路战斗系统完成**（148蛊虫/146技能/61杀招/56增益/53配方）:
+- **全48道路战斗系统完成**（177蛊虫/177技能/61杀招/72增益/60配方）:
   - 月道/金道/木道/血道/毒道/力道
   - 冰道/炎道/土道/风道/雷道/水道
   - 魂道/光道/暗道/梦道/幻道
