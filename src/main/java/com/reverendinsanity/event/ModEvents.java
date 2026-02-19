@@ -4,6 +4,7 @@ import com.reverendinsanity.ReverendInsanity;
 import com.reverendinsanity.command.GuCommand;
 import com.reverendinsanity.core.combat.CombatState;
 import com.reverendinsanity.core.combat.FlashBlindManager;
+import com.reverendinsanity.core.combat.RuntimeStateCleanup;
 import com.reverendinsanity.core.cultivation.Aperture;
 import com.reverendinsanity.core.cultivation.GuMasterData;
 import com.reverendinsanity.core.gu.GuInstance;
@@ -37,6 +38,7 @@ import net.neoforged.neoforge.event.entity.EntityTeleportEvent;
 import net.neoforged.neoforge.event.entity.player.PlayerEvent;
 import net.neoforged.neoforge.event.tick.PlayerTickEvent;
 import net.neoforged.neoforge.event.tick.ServerTickEvent;
+import net.neoforged.neoforge.event.server.ServerStoppedEvent;
 
 import java.util.ArrayList;
 
@@ -245,6 +247,11 @@ public class ModEvents {
             com.reverendinsanity.core.formation.FormationArrayManager.tickFormations(level);
             com.reverendinsanity.core.combat.SealManager.tickServer(level);
         }
+    }
+
+    @SubscribeEvent
+    public static void onServerStopped(ServerStoppedEvent event) {
+        RuntimeStateCleanup.clearAll(event.getServer());
     }
 
     @SubscribeEvent

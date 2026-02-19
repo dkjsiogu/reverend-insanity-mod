@@ -138,4 +138,8 @@ public class DefenseManager {
         public int counterAttackWindow;
         public float counterMultiplier;
     }
+
+    public static void clearAll() {
+        states.clear();
+    }
 }

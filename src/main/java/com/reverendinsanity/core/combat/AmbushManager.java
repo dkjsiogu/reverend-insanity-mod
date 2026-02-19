@@ -78,4 +78,8 @@ public class AmbushManager {
     public static void onPlayerLogout(ServerPlayer player) {
         stealthTicks.remove(player.getUUID());
     }
+
+    public static void clearAll() {
+        stealthTicks.clear();
+    }
 }

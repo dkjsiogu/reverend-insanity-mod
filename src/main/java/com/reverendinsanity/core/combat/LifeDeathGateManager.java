@@ -12,6 +12,7 @@ import net.minecraft.core.particles.DustParticleOptions;
 import net.minecraft.core.particles.ParticleTypes;
 import net.minecraft.network.chat.Component;
 import net.minecraft.resources.ResourceLocation;
+import net.minecraft.server.MinecraftServer;
 import net.minecraft.server.level.ServerLevel;
 import net.minecraft.server.level.ServerPlayer;
 import net.minecraft.sounds.SoundEvents;
@@ -557,6 +558,21 @@ public class LifeDeathGateManager {
         }
         removeAllModifiers(player);
         cooldowns.remove(player.getUUID());
+    }
+
+    public static void clearAll(MinecraftServer server) {
+        for (GateSession session : sessions.values()) {
+            for (Mob mob : session.spawnedMobs) {
+                if (mob.isAlive()) {
+                    mob.discard();
+                }
+            }
+        }
+        for (ServerPlayer player : server.getPlayerList().getPlayers()) {
+            removeAllModifiers(player);
+        }
+        sessions.clear();
+        cooldowns.clear();
     }
 
     public static boolean isInGate(ServerPlayer player) {

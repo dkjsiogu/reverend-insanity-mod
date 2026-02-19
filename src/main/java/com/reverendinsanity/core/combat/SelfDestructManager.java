@@ -114,4 +114,8 @@ public class SelfDestructManager {
     public static void onPlayerLogout(ServerPlayer player) {
         cooldowns.remove(player.getUUID());
     }
+
+    public static void clearAll() {
+        cooldowns.clear();
+    }
 }

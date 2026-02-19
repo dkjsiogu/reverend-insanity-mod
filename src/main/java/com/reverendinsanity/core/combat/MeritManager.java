@@ -57,6 +57,11 @@ public class MeritManager {
     public static void onPlayerLogout(ServerPlayer player) {
     }
 
+    public static void clearAll() {
+        meritPoints.clear();
+        beastTideActive = false;
+    }
+
     public static void onKillDuringBeastTide(ServerPlayer player, boolean isElite, boolean isBossKing, boolean isThunderCrown) {
         if (!beastTideActive) return;
 

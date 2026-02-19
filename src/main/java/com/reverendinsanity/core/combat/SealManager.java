@@ -7,6 +7,7 @@ import net.minecraft.ChatFormatting;
 import net.minecraft.core.particles.ParticleTypes;
 import net.minecraft.network.chat.Component;
 import net.minecraft.resources.ResourceLocation;
+import net.minecraft.server.MinecraftServer;
 import net.minecraft.server.level.ServerLevel;
 import net.minecraft.server.level.ServerPlayer;
 import net.minecraft.sounds.SoundEvents;
@@ -123,6 +124,22 @@ public class SealManager {
 
     public static void onPlayerLogout(ServerPlayer player) {
         cooldowns.remove(player.getUUID());
+    }
+
+    public static void clearAll(MinecraftServer server) {
+        for (ServerLevel level : server.getAllLevels()) {
+            for (var entity : level.getAllEntities()) {
+                if (!(entity instanceof LivingEntity living)) {
+                    continue;
+                }
+                var speed = living.getAttribute(Attributes.MOVEMENT_SPEED);
+                if (speed != null) {
+                    speed.removeModifier(SEAL_SPEED);
+                }
+            }
+        }
+        sealedEntities.clear();
+        cooldowns.clear();
     }
 
     private static class SealState {

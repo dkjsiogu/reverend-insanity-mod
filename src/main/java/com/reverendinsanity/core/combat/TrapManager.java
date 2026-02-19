@@ -121,6 +121,10 @@ public class TrapManager {
         playerTraps.remove(player.getUUID());
     }
 
+    public static void clearAll() {
+        playerTraps.clear();
+    }
+
     private static class Trap {
         BlockPos pos;
         float damage;

@@ -146,6 +146,12 @@ public class IntelligenceManager {
         keenEarBonusTicks.remove(playerUUID);
     }
 
+    public static void clearAll() {
+        intelMap.clear();
+        observationTrackers.clear();
+        keenEarBonusTicks.clear();
+    }
+
     private static class ObservationTracker {
         UUID targetUUID;
         int ticks;

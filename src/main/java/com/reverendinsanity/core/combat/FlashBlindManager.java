@@ -83,6 +83,22 @@ public final class FlashBlindManager {
         ACTIVE.clear();
     }
 
+    public static void clearAll(MinecraftServer server) {
+        for (Map.Entry<EntityKey, BlindState> entry : ACTIVE.entrySet()) {
+            EntityKey key = entry.getKey();
+            BlindState state = entry.getValue();
+            ServerLevel level = server.getLevel(key.dimensionKey());
+            if (level == null) {
+                continue;
+            }
+            Entity entity = level.getEntity(key.entityId());
+            if (entity instanceof LivingEntity living && living.getUUID().equals(state.uuid())) {
+                clearModifier(living);
+            }
+        }
+        ACTIVE.clear();
+    }
+
     private static void clearModifier(LivingEntity living) {
         AttributeInstance followRange = living.getAttribute(Attributes.FOLLOW_RANGE);
         if (followRange != null) {
