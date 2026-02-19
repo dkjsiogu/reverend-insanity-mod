@@ -81,7 +81,7 @@ publishing {
     }
     repositories {
         maven {
-            url "file://${project.projectDir}/repo"
+            url = uri("file://${project.projectDir}/repo")
         }
     }
 }
