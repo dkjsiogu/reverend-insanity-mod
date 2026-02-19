@@ -3,6 +3,7 @@ package com.reverendinsanity.event;
 import com.reverendinsanity.ReverendInsanity;
 import com.reverendinsanity.command.GuCommand;
 import com.reverendinsanity.core.combat.CombatState;
+import com.reverendinsanity.core.combat.FlashBlindManager;
 import com.reverendinsanity.core.cultivation.Aperture;
 import com.reverendinsanity.core.cultivation.EssenceGrade;
 import com.reverendinsanity.core.cultivation.GuMasterData;
@@ -321,11 +322,11 @@ public class ModEvents {
         PoisonCloudManager.tick();
         com.reverendinsanity.core.combat.FrostManager.tick();
         com.reverendinsanity.core.combat.DotManager.tick();
+        FlashBlindManager.tick(event.getServer());
         com.reverendinsanity.core.event.WorldEventManager.tickAllEvents(event.getServer());
         for (ServerLevel level : event.getServer().getAllLevels()) {
             com.reverendinsanity.core.formation.FormationArrayManager.tickFormations(level);
             com.reverendinsanity.core.combat.SealManager.tickServer(level);
-            tickFlashBlindExpiry(level);
         }
     }
 
@@ -341,20 +342,4 @@ public class ModEvents {
         }
     }
 
-    private static void tickFlashBlindExpiry(ServerLevel level) {
-        for (net.minecraft.world.entity.Entity entity : level.getAllEntities()) {
-            if (!(entity instanceof net.minecraft.world.entity.LivingEntity living)) continue;
-            int ticks = living.getPersistentData().getInt("ri:flash_blind_ticks");
-            if (ticks <= 0) continue;
-            ticks--;
-            living.getPersistentData().putInt("ri:flash_blind_ticks", ticks);
-            if (ticks <= 0) {
-                living.getPersistentData().remove("ri:flash_blind_ticks");
-                var followRange = living.getAttribute(net.minecraft.world.entity.ai.attributes.Attributes.FOLLOW_RANGE);
-                if (followRange != null) {
-                    followRange.removeModifier(com.reverendinsanity.core.combat.ability.impl.FlashGuAbility.FLASH_BLIND_MOD);
-                }
-            }
-        }
-    }
 }
