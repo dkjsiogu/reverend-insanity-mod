@@ -5,7 +5,6 @@ import com.reverendinsanity.command.GuCommand;
 import com.reverendinsanity.core.combat.CombatState;
 import com.reverendinsanity.core.combat.FlashBlindManager;
 import com.reverendinsanity.core.cultivation.Aperture;
-import com.reverendinsanity.core.cultivation.EssenceGrade;
 import com.reverendinsanity.core.cultivation.GuMasterData;
 import com.reverendinsanity.core.gu.GuInstance;
 import com.reverendinsanity.core.gu.GuRegistry;
@@ -17,11 +16,9 @@ import com.reverendinsanity.core.dream.DreamExplorationManager;
 import com.reverendinsanity.core.transformation.TransformationManager;
 import com.reverendinsanity.world.dimension.ApertureTimeManager;
 import com.reverendinsanity.core.aperture.calamity.CalamityManager;
-import com.reverendinsanity.core.path.DaoPath;
 import com.reverendinsanity.core.faction.Faction;
 import com.reverendinsanity.core.faction.FactionReputation;
-import com.reverendinsanity.network.SyncGuMasterDataPayload;
-import com.reverendinsanity.network.SyncDeductionPayload;
+import com.reverendinsanity.network.ServerPlayerSyncDispatcher;
 import com.reverendinsanity.registry.ModAttachments;
 import net.minecraft.network.chat.Component;
 import net.minecraft.resources.ResourceLocation;
@@ -40,7 +37,6 @@ import net.neoforged.neoforge.event.entity.EntityTeleportEvent;
 import net.neoforged.neoforge.event.entity.player.PlayerEvent;
 import net.neoforged.neoforge.event.tick.PlayerTickEvent;
 import net.neoforged.neoforge.event.tick.ServerTickEvent;
-import net.neoforged.neoforge.network.PacketDistributor;
 
 import java.util.ArrayList;
 
@@ -68,87 +64,8 @@ public class ModEvents {
         com.reverendinsanity.core.combat.IntelligenceManager.tickObservation(player);
 
         if (player.tickCount % 20 == 0) {
-            Aperture ap = data.getAperture();
-            int essenceColor = 0x00CC66;
-            EssenceGrade grade = ap.getEssenceGrade();
-            if (grade != null) essenceColor = grade.getColor();
-
-            String primaryPathMarks = "";
-            DaoPath primaryPath = ap.getPrimaryPath();
-            if (primaryPath != null) {
-                primaryPathMarks = primaryPath.getDisplayName() + ":" + data.getDaoMarks(primaryPath);
-            } else {
-                int maxMarks = 0;
-                DaoPath maxPath = null;
-                for (var entry : data.getAllDaoMarks().entrySet()) {
-                    if (entry.getValue() > maxMarks) {
-                        maxMarks = entry.getValue();
-                        maxPath = entry.getKey();
-                    }
-                }
-                if (maxPath != null) {
-                    primaryPathMarks = maxPath.getDisplayName() + ":" + maxMarks;
-                }
-            }
-
-            StringBuilder buffBuilder = new StringBuilder();
-            for (var buff : data.getBuffManager().getActiveBuffs()) {
-                if (!buff.isActive()) continue;
-                if (buffBuilder.length() > 0) buffBuilder.append(",");
-                buffBuilder.append(buff.getId().getPath()).append("|").append(buff.getRemainingTicks());
-            }
-
-            FactionReputation fRep = data.getFactionReputation();
-            String factionData = Faction.RIGHTEOUS.name() + ":" + fRep.getReputation(Faction.RIGHTEOUS)
-                + "," + Faction.DEMONIC.name() + ":" + fRep.getReputation(Faction.DEMONIC)
-                + "," + Faction.INDEPENDENT.name() + ":" + fRep.getReputation(Faction.INDEPENDENT);
-
-            SyncGuMasterDataPayload payload = new SyncGuMasterDataPayload(
-                ap.isOpened(),
-                ap.getRank().getLevel(),
-                ap.getSubRank().getIndex(),
-                ap.getAptitude().getDisplayName(),
-                ap.getCurrentEssence(),
-                ap.getMaxEssence(),
-                ap.getThoughts(),
-                ap.getMaxThoughts(),
-                essenceColor,
-                ap.getStoredGu().size(),
-                data.getCombatState().getEquippedMoves().size(),
-                data.getLuck(),
-                primaryPathMarks,
-                buffBuilder.toString(),
-                factionData,
-                data.getLifespan(),
-                com.reverendinsanity.core.cultivation.LifespanManager.getMaxLifespan(ap.getRank().getLevel()),
-                com.reverendinsanity.core.heavenwill.HeavenWillManager.getAttention(player),
-                com.reverendinsanity.core.combat.MeritManager.getMerit(player)
-            );
-            PacketDistributor.sendToPlayer(player, payload);
-
-            net.minecraft.world.phys.Vec3 eyePos = player.getEyePosition(1.0f);
-            net.minecraft.world.phys.Vec3 lookDir = player.getLookAngle();
-            net.minecraft.world.phys.Vec3 endPos = eyePos.add(lookDir.scale(64.0));
-            net.minecraft.world.phys.AABB scanArea = player.getBoundingBox().expandTowards(lookDir.scale(64.0)).inflate(1.0);
-            net.minecraft.world.phys.EntityHitResult lookHit = net.minecraft.world.entity.projectile.ProjectileUtil.getEntityHitResult(
-                player, eyePos, endPos, scanArea,
-                e -> e instanceof com.reverendinsanity.entity.GuMasterEntity && e.isAlive(), 64.0 * 64.0);
-            if (lookHit != null
-                && lookHit.getEntity() instanceof com.reverendinsanity.entity.GuMasterEntity gm) {
-                String info = com.reverendinsanity.core.combat.IntelligenceManager.getDisplayInfo(player, gm);
-                int intelOrd = com.reverendinsanity.core.combat.IntelligenceManager.getIntelLevel(player, gm).ordinal();
-                com.reverendinsanity.network.IntelSyncPayload intelPayload = new com.reverendinsanity.network.IntelSyncPayload(
-                    gm.getId(), intelOrd, gm.getGuRank(),
-                    gm.getPrimaryDaoPath() != null ? gm.getPrimaryDaoPath().getDisplayName() : "",
-                    info
-                );
-                PacketDistributor.sendToPlayer(player, intelPayload);
-            } else {
-                com.reverendinsanity.network.IntelSyncPayload clearPayload = new com.reverendinsanity.network.IntelSyncPayload(
-                    -1, 0, 0, "", ""
-                );
-                PacketDistributor.sendToPlayer(player, clearPayload);
-            }
+            ServerPlayerSyncDispatcher.syncHud(player, data);
+            ServerPlayerSyncDispatcher.syncTargetIntel(player);
         }
     }
 
