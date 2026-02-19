@@ -2,6 +2,7 @@ package com.reverendinsanity.core.combat.ability.impl;
 
 import com.reverendinsanity.client.vfx.VfxHelper;
 import com.reverendinsanity.client.vfx.VfxType;
+import com.reverendinsanity.core.combat.DotManager;
 import com.reverendinsanity.core.combat.ability.GuAbility;
 import com.reverendinsanity.core.cultivation.Aperture;
 import com.reverendinsanity.core.gu.GuRegistry;
@@ -9,14 +10,12 @@ import net.minecraft.network.chat.Component;
 import net.minecraft.server.level.ServerPlayer;
 import net.minecraft.sounds.SoundEvents;
 import net.minecraft.sounds.SoundSource;
-import net.minecraft.world.effect.MobEffectInstance;
-import net.minecraft.world.effect.MobEffects;
 import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.phys.AABB;
 import java.util.Comparator;
 import java.util.List;
 
-// 爱别离技能：毒道二转超强单体毒——凋灵+剧毒+真伤
+// 爱别离技能：毒道二转超强单体毒——自定义凋零DOT+毒素DOT+真伤
 public class LoveSeparationAbility extends GuAbility {
 
     public LoveSeparationAbility() {
@@ -37,8 +36,8 @@ public class LoveSeparationAbility extends GuAbility {
 
         if (!targets.isEmpty()) {
             LivingEntity target = targets.get(0);
-            target.addEffect(new MobEffectInstance(MobEffects.WITHER, 200, 1));
-            target.addEffect(new MobEffectInstance(MobEffects.POISON, 200, 1));
+            DotManager.applyWither(target, player, 2.0f, 200);
+            DotManager.applyPoison(target, player, 1.5f, 200);
             target.hurt(player.damageSources().magic(), 8.0f);
 
             VfxHelper.spawn(player, VfxType.IMPACT_BURST,

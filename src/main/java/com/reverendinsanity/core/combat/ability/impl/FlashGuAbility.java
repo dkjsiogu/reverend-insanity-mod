@@ -1,22 +1,28 @@
 package com.reverendinsanity.core.combat.ability.impl;
 
+import com.reverendinsanity.ReverendInsanity;
 import com.reverendinsanity.core.combat.ability.GuAbility;
 import com.reverendinsanity.core.cultivation.Aperture;
 import com.reverendinsanity.core.gu.GuInstance;
 import com.reverendinsanity.core.gu.GuRegistry;
 import net.minecraft.core.particles.ParticleTypes;
+import net.minecraft.resources.ResourceLocation;
 import net.minecraft.server.level.ServerLevel;
 import net.minecraft.server.level.ServerPlayer;
 import net.minecraft.sounds.SoundEvents;
 import net.minecraft.sounds.SoundSource;
-import net.minecraft.world.effect.MobEffectInstance;
-import net.minecraft.world.effect.MobEffects;
 import net.minecraft.world.entity.LivingEntity;
+import net.minecraft.world.entity.Mob;
+import net.minecraft.world.entity.ai.attributes.AttributeInstance;
+import net.minecraft.world.entity.ai.attributes.AttributeModifier;
+import net.minecraft.world.entity.ai.attributes.Attributes;
 import net.minecraft.world.phys.AABB;
 import java.util.List;
 
-// 闪光蛊技能：消耗型AoE致盲+破隐
+// 闪光蛊技能：消耗型AoE致盲+破隐——削减索敌范围+清除隐身+停止导航
 public class FlashGuAbility extends GuAbility {
+
+    public static final ResourceLocation FLASH_BLIND_MOD = ResourceLocation.fromNamespaceAndPath(ReverendInsanity.MODID, "flash_gu_blind");
 
     public FlashGuAbility() {
         super(GuRegistry.id("flash_gu"), 8f, 0, AbilityType.INSTANT);
@@ -37,8 +43,19 @@ public class FlashGuAbility extends GuAbility {
             e -> e != player && e.isAlive());
 
         for (LivingEntity target : targets) {
-            target.addEffect(new MobEffectInstance(MobEffects.BLINDNESS, 60, 1));
-            target.removeEffect(MobEffects.INVISIBILITY);
+            AttributeInstance followRange = target.getAttribute(Attributes.FOLLOW_RANGE);
+            if (followRange != null) {
+                followRange.removeModifier(FLASH_BLIND_MOD);
+                followRange.addTransientModifier(new AttributeModifier(
+                    FLASH_BLIND_MOD, -0.95,
+                    AttributeModifier.Operation.ADD_MULTIPLIED_TOTAL));
+            }
+            if (target instanceof Mob mob) {
+                mob.setTarget(null);
+                mob.getNavigation().stop();
+            }
+            target.setInvisible(false);
+            target.getPersistentData().putInt("ri:flash_blind_ticks", 60);
         }
 
         for (int i = 0; i < 40; i++) {

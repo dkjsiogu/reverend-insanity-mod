@@ -325,6 +325,7 @@ public class ModEvents {
         for (ServerLevel level : event.getServer().getAllLevels()) {
             com.reverendinsanity.core.formation.FormationArrayManager.tickFormations(level);
             com.reverendinsanity.core.combat.SealManager.tickServer(level);
+            tickFlashBlindExpiry(level);
         }
     }
 
@@ -336,6 +337,23 @@ public class ModEvents {
                 player.displayClientMessage(
                     Component.literal("天劫期间无法使用末影珍珠！")
                         .withStyle(net.minecraft.ChatFormatting.RED), true);
+            }
+        }
+    }
+
+    private static void tickFlashBlindExpiry(ServerLevel level) {
+        for (net.minecraft.world.entity.Entity entity : level.getAllEntities()) {
+            if (!(entity instanceof net.minecraft.world.entity.LivingEntity living)) continue;
+            int ticks = living.getPersistentData().getInt("ri:flash_blind_ticks");
+            if (ticks <= 0) continue;
+            ticks--;
+            living.getPersistentData().putInt("ri:flash_blind_ticks", ticks);
+            if (ticks <= 0) {
+                living.getPersistentData().remove("ri:flash_blind_ticks");
+                var followRange = living.getAttribute(net.minecraft.world.entity.ai.attributes.Attributes.FOLLOW_RANGE);
+                if (followRange != null) {
+                    followRange.removeModifier(com.reverendinsanity.core.combat.ability.impl.FlashGuAbility.FLASH_BLIND_MOD);
+                }
             }
         }
     }
