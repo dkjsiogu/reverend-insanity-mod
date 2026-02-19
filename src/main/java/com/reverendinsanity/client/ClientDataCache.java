@@ -50,40 +50,32 @@ public class ClientDataCache {
         guCount = payload.guCount();
         equippedMoveCount = payload.equippedMoveCount();
         luck = payload.luck();
-        String ppm = payload.primaryPathMarks();
-        if (ppm != null && ppm.contains(":")) {
-            String[] parts = ppm.split(":", 2);
-            primaryPathName = parts[0];
-            try { primaryPathMarks = Integer.parseInt(parts[1]); } catch (Exception e) { primaryPathMarks = 0; }
+        if (payload.primaryPath() != null) {
+            primaryPathName = payload.primaryPath().name();
+            primaryPathMarks = payload.primaryPath().marks();
         } else {
             primaryPathName = "";
             primaryPathMarks = 0;
         }
-        activeBuffs = parseBuffData(payload.activeBuffData());
-        parseFactionData(payload.factionData());
+        activeBuffs = parseBuffData(payload.activeBuffs());
+        parseFactionData(payload.faction());
         lifespan = payload.lifespan();
         maxLifespan = payload.maxLifespan();
         heavenWillAttention = (int) payload.heavenWillAttention();
         meritPoints = payload.meritPoints();
     }
 
-    private static List<BuffDisplayInfo> parseBuffData(String data) {
+    private static List<BuffDisplayInfo> parseBuffData(List<SyncGuMasterDataPayload.BuffData> buffData) {
         List<BuffDisplayInfo> result = new ArrayList<>();
-        if (data == null || data.isEmpty()) return result;
-        for (String entry : data.split(",")) {
-            String[] parts = entry.split("\\|", 2);
-            if (parts.length == 2) {
-                try {
-                    int ticks = Integer.parseInt(parts[1]);
-                    result.add(new BuffDisplayInfo(parts[0], Math.max(1, ticks / 20)));
-                } catch (NumberFormatException ignored) {}
-            }
+        if (buffData == null || buffData.isEmpty()) return result;
+        for (SyncGuMasterDataPayload.BuffData buff : buffData) {
+            result.add(new BuffDisplayInfo(buff.idPath(), Math.max(1, buff.remainingTicks() / 20)));
         }
         return result;
     }
 
-    private static void parseFactionData(String data) {
-        if (data == null || data.isEmpty()) {
+    private static void parseFactionData(SyncGuMasterDataPayload.FactionData factionData) {
+        if (factionData == null) {
             factionTierName = "";
             factionName = "";
             factionColor = 0xCCCC44;
@@ -92,18 +84,20 @@ public class ClientDataCache {
         int maxAbs = 0;
         String dominantFaction = "INDEPENDENT";
         int dominantValue = 0;
-        for (String entry : data.split(",")) {
-            String[] parts = entry.split(":", 2);
-            if (parts.length == 2) {
-                try {
-                    int val = Integer.parseInt(parts[1]);
-                    int abs = Math.abs(val);
-                    if (abs > maxAbs || (parts[0].equals("INDEPENDENT") && abs == maxAbs)) {
-                        maxAbs = abs;
-                        dominantFaction = parts[0];
-                        dominantValue = val;
-                    }
-                } catch (NumberFormatException ignored) {}
+
+        String[] names = {"RIGHTEOUS", "DEMONIC", "INDEPENDENT"};
+        int[] values = {
+            factionData.righteous(),
+            factionData.demonic(),
+            factionData.independent()
+        };
+        for (int i = 0; i < names.length; i++) {
+            int val = values[i];
+            int abs = Math.abs(val);
+            if (abs > maxAbs || ("INDEPENDENT".equals(names[i]) && abs == maxAbs)) {
+                maxAbs = abs;
+                dominantFaction = names[i];
+                dominantValue = val;
             }
         }
 

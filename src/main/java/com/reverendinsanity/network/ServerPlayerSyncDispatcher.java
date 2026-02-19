@@ -17,6 +17,8 @@ import net.minecraft.world.phys.AABB;
 import net.minecraft.world.phys.EntityHitResult;
 import net.minecraft.world.phys.Vec3;
 import net.neoforged.neoforge.network.PacketDistributor;
+import java.util.ArrayList;
+import java.util.List;
 
 public final class ServerPlayerSyncDispatcher {
 
@@ -41,9 +43,9 @@ public final class ServerPlayerSyncDispatcher {
             aperture.getStoredGu().size(),
             data.getCombatState().getEquippedMoves().size(),
             data.getLuck(),
-            resolvePrimaryPathMarks(aperture, data),
-            encodeActiveBuffs(data),
-            encodeFactionReputation(data.getFactionReputation()),
+            resolvePrimaryPathData(aperture, data),
+            collectActiveBuffs(data),
+            toFactionData(data.getFactionReputation()),
             data.getLifespan(),
             LifespanManager.getMaxLifespan(aperture.getRank().getLevel()),
             HeavenWillManager.getAttention(player),
@@ -88,10 +90,13 @@ public final class ServerPlayerSyncDispatcher {
         return grade != null ? grade.getColor() : 0x00CC66;
     }
 
-    private static String resolvePrimaryPathMarks(Aperture aperture, GuMasterData data) {
+    private static SyncGuMasterDataPayload.PrimaryPathData resolvePrimaryPathData(Aperture aperture, GuMasterData data) {
         DaoPath primaryPath = aperture.getPrimaryPath();
         if (primaryPath != null) {
-            return primaryPath.getDisplayName() + ":" + data.getDaoMarks(primaryPath);
+            return new SyncGuMasterDataPayload.PrimaryPathData(
+                primaryPath.getDisplayName(),
+                data.getDaoMarks(primaryPath)
+            );
         }
 
         int maxMarks = 0;
@@ -104,28 +109,30 @@ public final class ServerPlayerSyncDispatcher {
         }
 
         if (maxPath == null) {
-            return "";
+            return new SyncGuMasterDataPayload.PrimaryPathData("", 0);
         }
-        return maxPath.getDisplayName() + ":" + maxMarks;
+        return new SyncGuMasterDataPayload.PrimaryPathData(maxPath.getDisplayName(), maxMarks);
     }
 
-    private static String encodeActiveBuffs(GuMasterData data) {
-        StringBuilder buffBuilder = new StringBuilder();
+    private static List<SyncGuMasterDataPayload.BuffData> collectActiveBuffs(GuMasterData data) {
+        List<SyncGuMasterDataPayload.BuffData> buffs = new ArrayList<>();
         for (var buff : data.getBuffManager().getActiveBuffs()) {
             if (!buff.isActive()) {
                 continue;
             }
-            if (buffBuilder.length() > 0) {
-                buffBuilder.append(",");
-            }
-            buffBuilder.append(buff.getId().getPath()).append("|").append(buff.getRemainingTicks());
+            buffs.add(new SyncGuMasterDataPayload.BuffData(
+                buff.getId().getPath(),
+                buff.getRemainingTicks()
+            ));
         }
-        return buffBuilder.toString();
+        return buffs;
     }
 
-    private static String encodeFactionReputation(FactionReputation factionReputation) {
-        return Faction.RIGHTEOUS.name() + ":" + factionReputation.getReputation(Faction.RIGHTEOUS)
-            + "," + Faction.DEMONIC.name() + ":" + factionReputation.getReputation(Faction.DEMONIC)
-            + "," + Faction.INDEPENDENT.name() + ":" + factionReputation.getReputation(Faction.INDEPENDENT);
+    private static SyncGuMasterDataPayload.FactionData toFactionData(FactionReputation factionReputation) {
+        return new SyncGuMasterDataPayload.FactionData(
+            factionReputation.getReputation(Faction.RIGHTEOUS),
+            factionReputation.getReputation(Faction.DEMONIC),
+            factionReputation.getReputation(Faction.INDEPENDENT)
+        );
     }
 }
